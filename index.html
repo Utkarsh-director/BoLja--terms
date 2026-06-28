@@ -15,9 +15,9 @@
             --bg:        #EBF7F7;
             --card:      #ffffff;
             --border:    #E0E0E0;
-            --txt:       #111111;
-            --txt-gray:  #444444;
-            --txt-light: #666666;
+            --txt:       #0a0a0a;
+            --txt-gray:  #1a1a1a;
+            --txt-light: #333333;
             --accent:    #2196F3;
         }
 
@@ -395,7 +395,7 @@
 <!-- ── TOP NAV ── -->
 <nav class="top-bar">
     <div class="top-bar-inner">
-        <a href="/" class="top-bar-logo">BoLja!</a>
+        <a href="https://bolja-app.netlify.app" class="top-bar-logo">BoLja!</a>
         <span class="top-bar-label">Terms & Conditions</span>
     </div>
 </nav>
@@ -894,13 +894,13 @@
     <div class="contact-card">
         <h2>Questions? Contact Us</h2>
         <p>For any queries, report requests, or account-related issues, reach us at:</p>
-        <a href="mailto:support@bolja.app" class="contact-email">support@bolja.app</a>
+        <a href="mailto:boljasupport@gmail.com?subject=BoLja!%20Support" class="contact-email">boljasupport@gmail.com</a>
     </div>
 
     <!-- FOOTER -->
     <div class="footer">
         <br>
-        <a href="/" class="back-btn">← Back to BoLja!</a>
+        <button onclick="goBack()" class="back-btn">← Back to BoLja!</button>
         <br>
         &copy; 2025 BoLja! — All rights reserved.<br>
         Effective Date: July 1, 2025 &nbsp;|&nbsp; Governing Law: India<br>
@@ -908,5 +908,14 @@
     </div>
 
 </div>
+<script>
+    function goBack() {
+        if (window.history.length > 1) {
+            history.back();
+        } else {
+            window.location.href = 'https://bolja-app.netlify.app';
+        }
+    }
+</script>
 </body>
 </html>
