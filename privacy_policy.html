@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Privacy Policy — BoLja!</title>
+    <meta name="theme-color" content="#0D47A1">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --blue:      #0D47A1;
+            --blue-mid:  #1565C0;
+            --blue-light:#1976D2;
+            --bg:        #EBF7F7;
+            --card:      #ffffff;
+            --border:    #E0E0E0;
+            --txt:       #0a0a0a;
+            --txt-gray:  #1a1a1a;
+            --txt-light: #333333;
+            --accent:    #2196F3;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--txt);
+            line-height: 1.75;
+            font-size: 15px;
+        }
+
+        /* ── HEADER ── */
+        .top-bar {
+            background: linear-gradient(135deg, var(--blue) 0%, var(--blue-mid) 100%);
+            padding: 0 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(13,71,161,.35);
+        }
+        .top-bar-inner {
+            max-width: 760px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 58px;
+        }
+        .top-bar-logo {
+            font-size: 26px;
+            font-weight: 1000;
+            color: #fff;
+            letter-spacing: -1px;
+            text-decoration: none;
+            text-shadow: 0 2px 4px rgba(0,0,0,.15);
+        }
+        .top-bar-label {
+            color: rgba(255,255,255,.8);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: .3px;
+        }
+
+        /* ── HERO ── */
+        .hero {
+            background: linear-gradient(160deg, var(--blue) 0%, var(--blue-mid) 55%, var(--blue-light) 100%);
+            color: #fff;
+            padding: 48px 20px 40px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: clamp(26px, 6vw, 38px);
+            font-weight: 900;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+        }
+        .hero-sub {
+            color: rgba(255,255,255,.75);
+            font-size: 14px;
+            max-width: 480px;
+            margin: 0 auto 20px;
+        }
+        .hero-meta {
+            display: inline-flex;
+            align-items: center;
+            gap: 18px;
+            background: rgba(255,255,255,.12);
+            border: 1px solid rgba(255,255,255,.2);
+            border-radius: 30px;
+            padding: 8px 20px;
+            font-size: 12px;
+            color: rgba(255,255,255,.85);
+            font-weight: 600;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .hero-meta span::before { content: '•'; margin-right: 8px; opacity: .5; }
+        .hero-meta span:first-child::before { display: none; }
+
+        /* ── LAYOUT ── */
+        .page-wrap {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 16px 60px;
+        }
+
+        /* ── TOC ── */
+        .toc-card {
+            background: var(--card);
+            border-radius: 18px;
+            padding: 22px 24px;
+            margin: 28px 0 20px;
+            border: 1px solid rgba(13,71,161,.1);
+            box-shadow: 0 4px 20px rgba(13,71,161,.07);
+        }
+        .toc-title {
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.4px;
+            color: var(--blue);
+            margin-bottom: 14px;
+        }
+        .toc-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px 16px;
+        }
+        @media (max-width: 480px) { .toc-list { grid-template-columns: 1fr; } }
+        .toc-list a {
+            color: var(--blue-light);
+            text-decoration: none;
+            font-size: 13.5px;
+            font-weight: 600;
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+            transition: color .15s;
+        }
+        .toc-list a:hover { color: var(--blue); }
+        .toc-list a::before {
+            content: '→';
+            opacity: .5;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        /* ── SECTION ── */
+        .section {
+            background: var(--card);
+            border-radius: 18px;
+            padding: 26px 26px 22px;
+            margin-bottom: 16px;
+            border: 1px solid rgba(13,71,161,.08);
+            box-shadow: 0 2px 12px rgba(13,71,161,.05);
+            scroll-margin-top: 72px;
+        }
+        .section-num {
+            font-size: 11px;
+            font-weight: 800;
+            color: var(--accent);
+            letter-spacing: 1.6px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+        .section h2 {
+            font-size: 19px;
+            font-weight: 900;
+            color: var(--blue);
+            letter-spacing: -.4px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid rgba(13,71,161,.08);
+        }
+        .section p {
+            color: var(--txt-gray);
+            margin-bottom: 12px;
+            font-size: 14.5px;
+        }
+        .section p:last-child { margin-bottom: 0; }
+        .section strong { color: var(--txt); font-weight: 700; }
+
+        /* ── SUBSECTIONS ── */
+        .subsection {
+            margin-top: 16px;
+            padding-top: 14px;
+            border-top: 1px solid var(--border);
+        }
+        .subsection h3 {
+            font-size: 14px;
+            font-weight: 800;
+            color: var(--txt);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .subsection h3::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 16px;
+            background: var(--blue);
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+
+        /* ── RULE LIST ── */
+        .rule-list {
+            list-style: none;
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .rule-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 14px;
+            color: var(--txt-gray);
+            line-height: 1.6;
+        }
+        .rule-list li::before {
+            content: '▸';
+            color: var(--blue);
+            font-size: 12px;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        /* ── DATA TABLE ── */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+            font-size: 13.5px;
+        }
+        .data-table th {
+            background: rgba(13,71,161,.06);
+            color: var(--blue);
+            font-weight: 800;
+            text-align: left;
+            padding: 10px 14px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: .8px;
+            border-bottom: 2px solid rgba(13,71,161,.1);
+        }
+        .data-table td {
+            padding: 10px 14px;
+            color: var(--txt-gray);
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+            line-height: 1.5;
+        }
+        .data-table tr:last-child td { border-bottom: none; }
+        .data-table tr:nth-child(even) td { background: rgba(13,71,161,.02); }
+
+        /* ── HIGHLIGHT BOX ── */
+        .highlight-box {
+            background: rgba(13,71,161,.05);
+            border-left: 4px solid var(--blue);
+            border-radius: 0 10px 10px 0;
+            padding: 14px 16px;
+            margin: 14px 0;
+            font-size: 14px;
+            color: var(--txt-gray);
+        }
+        .highlight-box strong { color: var(--blue); }
+
+        .warn-box {
+            background: rgba(229,57,53,.05);
+            border-left: 4px solid #E53935;
+            border-radius: 0 10px 10px 0;
+            padding: 14px 16px;
+            margin: 14px 0;
+            font-size: 14px;
+            color: var(--txt-gray);
+        }
+        .warn-box strong { color: #C62828; }
+
+        /* ── NOT COLLECTED LIST ── */
+        .no-list {
+            list-style: none;
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .no-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 14px;
+            color: var(--txt-gray);
+            line-height: 1.6;
+        }
+        .no-list li::before {
+            content: '✕';
+            color: #E53935;
+            font-size: 12px;
+            font-weight: 900;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        /* ── CONTACT ── */
+        .contact-card {
+            background: linear-gradient(135deg, var(--blue) 0%, var(--blue-mid) 100%);
+            border-radius: 18px;
+            padding: 28px;
+            color: #fff;
+            text-align: center;
+            margin-top: 28px;
+        }
+        .contact-card h2 { font-size: 20px; font-weight: 900; margin-bottom: 8px; }
+        .contact-card p  { color: rgba(255,255,255,.75); font-size: 14px; margin-bottom: 16px; }
+        .contact-email {
+            display: inline-block;
+            background: rgba(255,255,255,.15);
+            border: 1.5px solid rgba(255,255,255,.35);
+            border-radius: 12px;
+            padding: 11px 24px;
+            color: #fff;
+            font-weight: 800;
+            font-size: 14px;
+            text-decoration: none;
+            transition: background .2s;
+        }
+        .contact-email:hover { background: rgba(255,255,255,.25); }
+
+        /* ── FOOTER ── */
+        .footer {
+            text-align: center;
+            color: var(--txt-light);
+            font-size: 12px;
+            margin-top: 32px;
+            padding-bottom: 20px;
+            line-height: 2;
+        }
+        .footer a { color: var(--blue-light); text-decoration: none; }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: linear-gradient(135deg, var(--blue), var(--blue-mid));
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            padding: 11px 22px;
+            font-size: 14px;
+            font-weight: 800;
+            cursor: pointer;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 16px rgba(13,71,161,.35);
+            transition: all .2s;
+        }
+        .back-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(13,71,161,.4); }
+    </style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<nav class="top-bar">
+    <div class="top-bar-inner">
+        <a href="https://bolja-app.netlify.app" class="top-bar-logo">BoLja!</a>
+        <span class="top-bar-label">Privacy Policy</span>
+    </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+    <h1>Privacy Policy</h1>
+    <p class="hero-sub">This policy explains how we collect, use, store, and protect your personal information when you use BoLja!.</p>
+    <div class="hero-meta">
+        <span>Effective: June 2025</span>
+        <span>Last Updated: June 2025</span>
+        <span>Governing Law: India</span>
+    </div>
+</header>
+
+<div class="page-wrap">
+
+    <!-- TABLE OF CONTENTS -->
+    <div class="toc-card">
+        <div class="toc-title">Table of Contents</div>
+        <ul class="toc-list">
+            <li><a href="#sec1">Introduction</a></li>
+            <li><a href="#sec2">Information We Collect</a></li>
+            <li><a href="#sec3">How We Use Your Information</a></li>
+            <li><a href="#sec4">Push Notifications</a></li>
+            <li><a href="#sec5">Data Storage &amp; Security</a></li>
+            <li><a href="#sec6">Google Sign-In</a></li>
+            <li><a href="#sec7">User-Generated Content</a></li>
+            <li><a href="#sec8">Data Retention</a></li>
+            <li><a href="#sec9">Children's Privacy</a></li>
+            <li><a href="#sec10">Third-Party Services</a></li>
+            <li><a href="#sec11">Your Rights</a></li>
+            <li><a href="#sec12">Changes to This Policy</a></li>
+            <li><a href="#sec13">Contact Us</a></li>
+        </ul>
+    </div>
+
+    <!-- SECTION 1 -->
+    <div class="section" id="sec1">
+        <div class="section-num">Section 01</div>
+        <h2>Introduction</h2>
+        <p><strong>BoLja!</strong> ("we", "our", or "the app") is a social Q&A platform that allows users to post questions, share concerns, and engage with their community.</p>
+        <p>This Privacy Policy explains how we collect, use, store, and protect your personal information when you use our app.</p>
+        <div class="highlight-box"><strong>By using BoLja!, you agree to the terms of this Privacy Policy.</strong></div>
+    </div>
+
+    <!-- SECTION 2 -->
+    <div class="section" id="sec2">
+        <div class="section-num">Section 02</div>
+        <h2>Information We Collect</h2>
+
+        <div class="subsection">
+            <h3>a) Information You Provide Directly</h3>
+            <ul class="rule-list">
+                <li><strong>Full Name</strong> — entered during profile setup</li>
+                <li><strong>Location</strong> — city/area you choose to display</li>
+                <li><strong>Profile Information</strong> — name and location shown on your posts</li>
+            </ul>
+        </div>
+
+        <div class="subsection">
+            <h3>b) Information Collected Automatically</h3>
+            <ul class="rule-list">
+                <li><strong>Google Account data</strong> — email address and Google profile (via Google Sign-In)</li>
+                <li><strong>Unique Account ID</strong> — assigned automatically at login to link your activity</li>
+                <li><strong>Push notification token</strong> — used to send notifications to your device</li>
+                <li><strong>Posts, comments, and replies</strong> — all content you create in the app</li>
+                <li><strong>Likes</strong> — posts you have liked</li>
+            </ul>
+        </div>
+
+        <div class="subsection">
+            <h3>c) Information We Do NOT Collect</h3>
+            <ul class="no-list">
+                <li>We do not collect your <strong>phone number</strong></li>
+                <li>We do not collect your <strong>location in real-time (GPS)</strong></li>
+                <li>We do not collect your <strong>contacts or call logs</strong></li>
+                <li>We do not collect <strong>payment information</strong></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- SECTION 3 -->
+    <div class="section" id="sec3">
+        <div class="section-num">Section 03</div>
+        <h2>How We Use Your Information</h2>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Name &amp; Location</strong></td>
+                    <td>Display on your posts and profile</td>
+                </tr>
+                <tr>
+                    <td><strong>Email Address</strong></td>
+                    <td>Account identification, login</td>
+                </tr>
+                <tr>
+                    <td><strong>Posts &amp; Comments</strong></td>
+                    <td>Display in the community feed</td>
+                </tr>
+                <tr>
+                    <td><strong>Account ID</strong></td>
+                    <td>Link your data across the app</td>
+                </tr>
+                <tr>
+                    <td><strong>Push Notification Token</strong></td>
+                    <td>Send push notifications (likes, comments, replies)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- SECTION 4 -->
+    <div class="section" id="sec4">
+        <div class="section-num">Section 04</div>
+        <h2>Push Notifications</h2>
+        <ul class="rule-list">
+            <li>BoLja! sends push notifications when someone <strong>likes, comments on, or replies to</strong> your post</li>
+            <li>Notifications require your <strong>explicit permission</strong> — you can allow or deny them at any time</li>
+            <li>Your push notification token is stored securely in our database and is <strong>only used to deliver notifications</strong> to your device</li>
+        </ul>
+        <div class="subsection">
+            <h3>How to Disable Notifications</h3>
+            <ul class="rule-list">
+                <li>App Settings → Notifications → Disable</li>
+                <li>Phone Settings → Apps → BoLja! → Notifications → Off</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- SECTION 5 -->
+    <div class="section" id="sec5">
+        <div class="section-num">Section 05</div>
+        <h2>Data Storage &amp; Security</h2>
+        <ul class="rule-list">
+            <li>All data is stored on <strong>secure cloud servers</strong> with industry-standard encryption</li>
+            <li>We use <strong>strict access controls</strong> to ensure users can only access their own private data</li>
+            <li>Data may be stored on servers located outside your country, subject to Google's data handling standards</li>
+        </ul>
+        <div class="warn-box"><strong>We do not sell, rent, or share your personal data with any third party for commercial purposes.</strong></div>
+    </div>
+
+    <!-- SECTION 6 -->
+    <div class="section" id="sec6">
+        <div class="section-num">Section 06</div>
+        <h2>Google Sign-In</h2>
+        <ul class="rule-list">
+            <li>BoLja! uses <strong>Google OAuth</strong> for authentication — no passwords are stored by us</li>
+            <li>When you sign in with Google, we receive your: <strong>name, email address, and Google profile photo URL</strong></li>
+        </ul>
+        <div class="highlight-box"><strong>Google's own Privacy Policy</strong> applies to your Google account data: <a href="https://policies.google.com/privacy" target="_blank" style="color:var(--blue-light);">policies.google.com/privacy</a></div>
+    </div>
+
+    <!-- SECTION 7 -->
+    <div class="section" id="sec7">
+        <div class="section-num">Section 07</div>
+        <h2>User-Generated Content</h2>
+        <ul class="rule-list">
+            <li>Everything you post (questions, comments, replies) is <strong>publicly visible</strong> to all users of the app</li>
+            <li>Do <strong>not</strong> share personal information (phone numbers, addresses, financial information) in your posts</li>
+            <li>We reserve the right to <strong>remove any content</strong> that violates our Terms &amp; Conditions</li>
+        </ul>
+    </div>
+
+    <!-- SECTION 8 -->
+    <div class="section" id="sec8">
+        <div class="section-num">Section 08</div>
+        <h2>Data Retention</h2>
+        <ul class="rule-list">
+            <li>Your account data is retained as long as your <strong>account is active</strong></li>
+            <li>If you <strong>delete your account</strong>, your profile and posts will be permanently removed from our servers</li>
+            <li>Notification tokens are deleted when you <strong>log out or delete your account</strong></li>
+        </ul>
+    </div>
+
+    <!-- SECTION 9 -->
+    <div class="section" id="sec9">
+        <div class="section-num">Section 09</div>
+        <h2>Children's Privacy</h2>
+        <ul class="rule-list">
+            <li>BoLja! is <strong>not intended for users under the age of 13 years</strong></li>
+            <li>We do not knowingly collect personal information from children under 13</li>
+            <li>If we discover that a child under 13 has provided us personal information, we will <strong>delete it immediately</strong></li>
+        </ul>
+        <div class="warn-box"><strong>Parents/Guardians:</strong> If you believe your child has created a BoLja! account without consent, please contact us at <a href="mailto:boljasupport@gmail.com?subject=Child%20Account%20Report" style="color:#C62828;">boljasupport@gmail.com</a> immediately.</div>
+    </div>
+
+    <!-- SECTION 10 -->
+    <div class="section" id="sec10">
+        <div class="section-num">Section 10</div>
+        <h2>Third-Party Services Used</h2>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Service</th>
+                    <th>Purpose</th>
+                    <th>Privacy Policy</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Google Firebase</strong></td>
+                    <td>Database, Authentication, Cloud Messaging</td>
+                    <td><a href="https://firebase.google.com/support/privacy" target="_blank" style="color:var(--blue-light);">firebase.google.com/support/privacy</a></td>
+                </tr>
+                <tr>
+                    <td><strong>Google Sign-In</strong></td>
+                    <td>User authentication</td>
+                    <td><a href="https://policies.google.com/privacy" target="_blank" style="color:var(--blue-light);">policies.google.com/privacy</a></td>
+                </tr>
+                <tr>
+                    <td><strong>Firebase Cloud Messaging (FCM)</strong></td>
+                    <td>Push notifications</td>
+                    <td><a href="https://firebase.google.com/support/privacy" target="_blank" style="color:var(--blue-light);">firebase.google.com/support/privacy</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- SECTION 11 -->
+    <div class="section" id="sec11">
+        <div class="section-num">Section 11</div>
+        <h2>Your Rights</h2>
+        <p>You have the right to:</p>
+        <ul class="rule-list">
+            <li><strong>Access</strong> your personal data stored by us</li>
+            <li><strong>Correct</strong> incorrect information in your profile</li>
+            <li><strong>Delete</strong> your account and all associated data</li>
+            <li><strong>Withdraw consent</strong> for notifications at any time</li>
+            <li><strong>Request a copy</strong> of your data</li>
+        </ul>
+        <div class="highlight-box"><strong>To exercise these rights, contact us at:</strong> <a href="mailto:boljasupport@gmail.com?subject=Data%20Rights%20Request" style="color:var(--blue-light);">boljasupport@gmail.com</a></div>
+    </div>
+
+    <!-- SECTION 12 -->
+    <div class="section" id="sec12">
+        <div class="section-num">Section 12</div>
+        <h2>Changes to This Privacy Policy</h2>
+        <p>We may update this Privacy Policy from time to time. When we do:</p>
+        <ul class="rule-list">
+            <li>The <strong>"Last Updated"</strong> date will be changed</li>
+            <li>Significant changes will be <strong>communicated through the app</strong></li>
+            <li>Continued use of BoLja! after changes means you <strong>accept the updated policy</strong></li>
+        </ul>
+    </div>
+
+    <!-- SECTION 13 -->
+    <div class="section" id="sec13">
+        <div class="section-num">Section 13</div>
+        <h2>Contact Us</h2>
+        <p>For any privacy-related questions, concerns, or requests:</p>
+        <ul class="rule-list">
+            <li>📧 <strong>Email:</strong> <a href="mailto:boljasupport@gmail.com?subject=Privacy%20Query" style="color:var(--blue-light);">boljasupport@gmail.com</a></li>
+        </ul>
+        <div class="highlight-box"><strong>By using BoLja!, you acknowledge that you have read and understood this Privacy Policy.</strong></div>
+    </div>
+
+    <!-- CONTACT CARD -->
+    <div class="contact-card">
+        <h2>Privacy Questions? Contact Us</h2>
+        <p>We take your privacy seriously. Reach out anytime.</p>
+        <a href="mailto:boljasupport@gmail.com?subject=Privacy%20Query" class="contact-email">boljasupport@gmail.com</a>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <br>
+        <button onclick="goBack()" class="back-btn">← Back to BoLja!</button>
+        <br>
+        &copy; 2025 BoLja! — All rights reserved.<br>
+        Effective: June 2025 &nbsp;|&nbsp; Governing Law: India<br>
+        <a href="./T_C_.html">Terms &amp; Conditions</a> &nbsp;|&nbsp; Privacy Policy
+    </div>
+
+</div>
+
+<script>
+    function goBack() {
+        if (window.history.length > 1) {
+            history.back();
+        } else {
+            window.location.href = 'https://bolja-app.netlify.app';
+        }
+    }
+</script>
+</body>
+</html>
