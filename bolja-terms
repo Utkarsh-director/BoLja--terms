@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Terms & Conditions — BoLja!</title>
+    <meta name="theme-color" content="#0D47A1">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --blue:      #0D47A1;
+            --blue-mid:  #1565C0;
+            --blue-light:#1976D2;
+            --bg:        #EBF7F7;
+            --card:      #ffffff;
+            --border:    #E0E0E0;
+            --txt:       #111111;
+            --txt-gray:  #444444;
+            --txt-light: #666666;
+            --accent:    #2196F3;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--txt);
+            line-height: 1.75;
+            font-size: 15px;
+        }
+
+        /* ── HEADER ── */
+        .top-bar {
+            background: linear-gradient(135deg, var(--blue) 0%, var(--blue-mid) 100%);
+            padding: 0 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(13,71,161,.35);
+        }
+        .top-bar-inner {
+            max-width: 760px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 58px;
+        }
+        .top-bar-logo {
+            font-size: 26px;
+            font-weight: 1000;
+            color: #fff;
+            letter-spacing: -1px;
+            text-decoration: none;
+            text-shadow: 0 2px 4px rgba(0,0,0,.15);
+        }
+        .top-bar-label {
+            color: rgba(255,255,255,.8);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: .3px;
+        }
+
+        /* ── HERO ── */
+        .hero {
+            background: linear-gradient(160deg, var(--blue) 0%, var(--blue-mid) 55%, var(--blue-light) 100%);
+            color: #fff;
+            padding: 48px 20px 40px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: clamp(26px, 6vw, 38px);
+            font-weight: 900;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+        }
+        .hero-sub {
+            color: rgba(255,255,255,.75);
+            font-size: 14px;
+            max-width: 480px;
+            margin: 0 auto 20px;
+        }
+        .hero-meta {
+            display: inline-flex;
+            align-items: center;
+            gap: 18px;
+            background: rgba(255,255,255,.12);
+            border: 1px solid rgba(255,255,255,.2);
+            border-radius: 30px;
+            padding: 8px 20px;
+            font-size: 12px;
+            color: rgba(255,255,255,.85);
+            font-weight: 600;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .hero-meta span::before { content: '•'; margin-right: 8px; opacity: .5; }
+        .hero-meta span:first-child::before { display: none; }
+
+        /* ── LAYOUT ── */
+        .page-wrap {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 16px 60px;
+        }
+
+        /* ── TOC ── */
+        .toc-card {
+            background: var(--card);
+            border-radius: 18px;
+            padding: 22px 24px;
+            margin: 28px 0 20px;
+            border: 1px solid rgba(13,71,161,.1);
+            box-shadow: 0 4px 20px rgba(13,71,161,.07);
+        }
+        .toc-title {
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.4px;
+            color: var(--blue);
+            margin-bottom: 14px;
+        }
+        .toc-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px 16px;
+        }
+        @media (max-width: 480px) { .toc-list { grid-template-columns: 1fr; } }
+        .toc-list a {
+            color: var(--blue-light);
+            text-decoration: none;
+            font-size: 13.5px;
+            font-weight: 600;
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+            transition: color .15s;
+        }
+        .toc-list a:hover { color: var(--blue); }
+        .toc-list a::before {
+            content: '→';
+            opacity: .5;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        /* ── SECTION ── */
+        .section {
+            background: var(--card);
+            border-radius: 18px;
+            padding: 26px 26px 22px;
+            margin-bottom: 16px;
+            border: 1px solid rgba(13,71,161,.08);
+            box-shadow: 0 2px 12px rgba(13,71,161,.05);
+            scroll-margin-top: 72px;
+        }
+        .section-num {
+            font-size: 11px;
+            font-weight: 800;
+            color: var(--accent);
+            letter-spacing: 1.6px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+        .section h2 {
+            font-size: 19px;
+            font-weight: 900;
+            color: var(--blue);
+            letter-spacing: -.4px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid rgba(13,71,161,.08);
+        }
+        .section p {
+            color: var(--txt-gray);
+            margin-bottom: 12px;
+            font-size: 14.5px;
+        }
+        .section p:last-child { margin-bottom: 0; }
+        .section strong { color: var(--txt); font-weight: 700; }
+
+        /* ── SUBSECTIONS ── */
+        .subsection {
+            margin-top: 16px;
+            padding-top: 14px;
+            border-top: 1px solid var(--border);
+        }
+        .subsection h3 {
+            font-size: 14px;
+            font-weight: 800;
+            color: var(--txt);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .subsection h3::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 16px;
+            background: var(--blue);
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+
+        /* ── PILL LIST ── */
+        .pill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 10px;
+        }
+        .pill {
+            background: rgba(13,71,161,.07);
+            color: var(--blue);
+            border: 1px solid rgba(13,71,161,.15);
+            border-radius: 6px;
+            padding: 4px 10px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+
+        /* ── RULE LIST ── */
+        .rule-list {
+            list-style: none;
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .rule-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 14px;
+            color: var(--txt-gray);
+            line-height: 1.6;
+        }
+        .rule-list li::before {
+            content: '▸';
+            color: var(--blue);
+            font-size: 12px;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        /* ── PROHIBITED LIST ── */
+        .prohibited-list {
+            list-style: none;
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .prohibited-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 14px;
+            color: var(--txt-gray);
+            line-height: 1.6;
+        }
+        .prohibited-list li::before {
+            content: '✕';
+            color: #E53935;
+            font-size: 12px;
+            font-weight: 900;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        /* ── DATA TABLE ── */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+            font-size: 13.5px;
+        }
+        .data-table th {
+            background: rgba(13,71,161,.06);
+            color: var(--blue);
+            font-weight: 800;
+            text-align: left;
+            padding: 10px 14px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: .8px;
+            border-bottom: 2px solid rgba(13,71,161,.1);
+        }
+        .data-table td {
+            padding: 10px 14px;
+            color: var(--txt-gray);
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+            line-height: 1.5;
+        }
+        .data-table tr:last-child td { border-bottom: none; }
+        .data-table tr:nth-child(even) td { background: rgba(13,71,161,.02); }
+
+        /* ── HIGHLIGHT BOX ── */
+        .highlight-box {
+            background: rgba(13,71,161,.05);
+            border-left: 4px solid var(--blue);
+            border-radius: 0 10px 10px 0;
+            padding: 14px 16px;
+            margin: 14px 0;
+            font-size: 14px;
+            color: var(--txt-gray);
+        }
+        .highlight-box strong { color: var(--blue); }
+
+        .warn-box {
+            background: rgba(229,57,53,.05);
+            border-left: 4px solid #E53935;
+            border-radius: 0 10px 10px 0;
+            padding: 14px 16px;
+            margin: 14px 0;
+            font-size: 14px;
+            color: var(--txt-gray);
+        }
+        .warn-box strong { color: #C62828; }
+
+        /* ── CONTACT ── */
+        .contact-card {
+            background: linear-gradient(135deg, var(--blue) 0%, var(--blue-mid) 100%);
+            border-radius: 18px;
+            padding: 28px;
+            color: #fff;
+            text-align: center;
+            margin-top: 28px;
+        }
+        .contact-card h2 {
+            font-size: 20px;
+            font-weight: 900;
+            margin-bottom: 8px;
+        }
+        .contact-card p {
+            color: rgba(255,255,255,.75);
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+        .contact-email {
+            display: inline-block;
+            background: rgba(255,255,255,.15);
+            border: 1.5px solid rgba(255,255,255,.35);
+            border-radius: 12px;
+            padding: 11px 24px;
+            color: #fff;
+            font-weight: 800;
+            font-size: 14px;
+            text-decoration: none;
+            transition: background .2s;
+        }
+        .contact-email:hover { background: rgba(255,255,255,.25); }
+
+        /* ── FOOTER ── */
+        .footer {
+            text-align: center;
+            color: var(--txt-light);
+            font-size: 12px;
+            margin-top: 32px;
+            padding-bottom: 20px;
+            line-height: 2;
+        }
+        .footer a { color: var(--blue-light); text-decoration: none; }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: linear-gradient(135deg, var(--blue), var(--blue-mid));
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            padding: 11px 22px;
+            font-size: 14px;
+            font-weight: 800;
+            cursor: pointer;
+            text-decoration: none;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 16px rgba(13,71,161,.35);
+            transition: all .2s;
+        }
+        .back-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(13,71,161,.4); }
+    </style>
+</head>
+<body>
+
+<!-- ── TOP NAV ── -->
+<nav class="top-bar">
+    <div class="top-bar-inner">
+        <a href="/" class="top-bar-logo">BoLja!</a>
+        <span class="top-bar-label">Terms & Conditions</span>
+    </div>
+</nav>
+
+<!-- ── HERO ── -->
+<header class="hero">
+    <h1>Terms &amp; Conditions</h1>
+    <p class="hero-sub">Please read these terms carefully before using BoLja!. By signing in, you agree to all terms below.</p>
+    <div class="hero-meta">
+        <span>Effective: July 1, 2025</span>
+        <span>Last updated: July 1, 2025</span>
+        <span>Governing Law: India</span>
+    </div>
+</header>
+
+<div class="page-wrap">
+
+    <!-- TABLE OF CONTENTS -->
+    <div class="toc-card">
+        <div class="toc-title">Table of Contents</div>
+        <ul class="toc-list">
+            <li><a href="#sec1">Acceptance of Terms</a></li>
+            <li><a href="#sec2">Eligibility</a></li>
+            <li><a href="#sec3">User Accounts &amp; Authentication</a></li>
+            <li><a href="#sec4">User-Generated Content</a></li>
+            <li><a href="#sec5">Content Categories &amp; Targets</a></li>
+            <li><a href="#sec6">Prohibited Activities</a></li>
+            <li><a href="#sec7">Data Collection &amp; Storage</a></li>
+            <li><a href="#sec8">Likes, Comments &amp; Interactions</a></li>
+            <li><a href="#sec9">Push Notifications</a></li>
+            <li><a href="#sec10">Reporting &amp; Moderation</a></li>
+            <li><a href="#sec11">Offline Functionality</a></li>
+            <li><a href="#sec12">Account Termination &amp; Deletion</a></li>
+            <li><a href="#sec13">Intellectual Property</a></li>
+            <li><a href="#sec14">Disclaimers &amp; Liability</a></li>
+            <li><a href="#sec15">Governing Law</a></li>
+            <li><a href="#sec16">Changes to These Terms</a></li>
+        </ul>
+    </div>
+
+    <!-- SECTION 1 -->
+    <div class="section" id="sec1">
+        <div class="section-num">Section 01</div>
+        <h2>Acceptance of Terms</h2>
+        <p>Welcome to <strong>BoLja!</strong> ("the App", "the Platform", "we", "us", or "our"). BoLja! is a public voice platform that enables users to raise questions, concerns, and feedback directed at government bodies, brands, creators, institutions, and other public entities.</p>
+        <p>By accessing or using BoLja! — whether through our web app, Progressive Web App (PWA), or any other interface — you ("User", "you") agree to be legally bound by these Terms &amp; Conditions ("Terms"). These Terms apply to all features including posting, commenting, liking, notifications, and account management.</p>
+        <div class="highlight-box"><strong>Important:</strong> If you do not agree with any part of these Terms, you must not use BoLja!. Continued use of the platform after any updates constitutes acceptance of the revised Terms.</div>
+    </div>
+
+    <!-- SECTION 2 -->
+    <div class="section" id="sec2">
+        <div class="section-num">Section 02</div>
+        <h2>Eligibility</h2>
+        <p>To use BoLja!, you must meet the following eligibility requirements:</p>
+        <ul class="rule-list">
+            <li>You must be at least <strong>13 years of age</strong>. Users between 13–17 years must have verifiable parental or guardian consent.</li>
+            <li>You must have the legal capacity to enter into binding agreements under Indian law.</li>
+            <li>You must not be barred from receiving services under applicable laws.</li>
+            <li>You must not have a previously suspended or permanently banned BoLja! account.</li>
+        </ul>
+        <p style="margin-top:14px;">By signing in with Google, you represent and warrant that you meet all of the above eligibility requirements. BoLja! reserves the right to terminate any account found to be in violation of these requirements.</p>
+    </div>
+
+    <!-- SECTION 3 -->
+    <div class="section" id="sec3">
+        <div class="section-num">Section 03</div>
+        <h2>User Accounts &amp; Authentication</h2>
+        <p>BoLja! uses <strong>Google Sign-In (OAuth 2.0)</strong> exclusively for authentication, powered by <strong>Firebase Authentication</strong>. We do not store or manage passwords.</p>
+
+        <div class="subsection">
+            <h3>What we store from your Google account</h3>
+            <ul class="rule-list">
+                <li>Your <strong>Google Display Name</strong> — pre-filled during profile setup</li>
+                <li>Your <strong>Google email address</strong> — stored in Firestore for account identification</li>
+                <li>Your unique <strong>Firebase UID</strong> — used to associate all your activity (posts, likes, comments)</li>
+            </ul>
+        </div>
+
+        <div class="subsection">
+            <h3>Profile Information You Provide</h3>
+            <p>During initial profile setup, you may provide:</p>
+            <ul class="rule-list">
+                <li><strong>Your Name</strong> — displayed publicly alongside your posts and comments</li>
+                <li><strong>Your City / Location</strong> — stored in Firestore and may be shown contextually</li>
+            </ul>
+        </div>
+
+        <div class="subsection">
+            <h3>Your Responsibilities</h3>
+            <ul class="rule-list">
+                <li>You are responsible for all activity under your account</li>
+                <li>You must keep your Google account secure</li>
+                <li>You must not share or transfer your account to any other person</li>
+                <li>If you suspect unauthorized access, sign out immediately and secure your Google account</li>
+            </ul>
+        </div>
+
+        <div class="highlight-box"><strong>Session Persistence:</strong> BoLja! saves a lightweight session snapshot in your device's local storage to speed up app loading. This data is local only and is cleared upon logout or account deletion.</div>
+    </div>
+
+    <!-- SECTION 4 -->
+    <div class="section" id="sec4">
+        <div class="section-num">Section 04</div>
+        <h2>User-Generated Content</h2>
+        <p>BoLja! is a platform for public voice and concerns. By submitting any post, comment, or reply ("Content") on BoLja!, you agree to the following:</p>
+
+        <div class="subsection">
+            <h3>Content Ownership</h3>
+            <p>You retain ownership of the original content you create. However, by posting on BoLja!, you grant us a <strong>non-exclusive, royalty-free, worldwide, irrevocable license</strong> to store, display, and distribute that content within the BoLja! platform for the purpose of providing the service.</p>
+        </div>
+
+        <div class="subsection">
+            <h3>Content Standards</h3>
+            <p>All content you submit must:</p>
+            <ul class="rule-list">
+                <li>Be genuine and represent an actual concern, question, or feedback</li>
+                <li>Be respectful, factual, and directed at the selected target (government body, brand, creator, etc.)</li>
+                <li>Be written in a constructive manner — disagreement is welcome, abuse is not</li>
+                <li>Be at minimum <strong>10 characters in length</strong> to ensure meaningful communication</li>
+                <li>Not impersonate any real person, public figure, brand, or organization</li>
+            </ul>
+        </div>
+
+        <div class="subsection">
+            <h3>Content Visibility</h3>
+            <p>All posts and comments on BoLja! are <strong>publicly visible</strong> to all users of the platform. Do not post any information you wish to keep private, including personal contact details, financial information, or sensitive personal matters.</p>
+        </div>
+
+        <div class="warn-box"><strong>Do not post</strong> personally identifiable information of other individuals without their explicit consent. BoLja! is not responsible for any consequences arising from voluntary disclosure of personal information in public posts or comments.</div>
+    </div>
+
+    <!-- SECTION 5 -->
+    <div class="section" id="sec5">
+        <div class="section-num">Section 05</div>
+        <h2>Content Categories &amp; Targets</h2>
+        <p>BoLja! organizes user content into structured categories to enable targeted feedback and accountability. Each post must be assigned a <strong>Category</strong> and a <strong>Target</strong>.</p>
+
+        <div class="subsection">
+            <h3>Available Categories</h3>
+            <div class="pill-list">
+                <span class="pill">Government</span>
+                <span class="pill">YouTube</span>
+                <span class="pill">Brands</span>
+                <span class="pill">Local</span>
+                <span class="pill">Education</span>
+                <span class="pill">Health</span>
+                <span class="pill">Transport</span>
+                <span class="pill">Utilities</span>
+                <span class="pill">Gaming</span>
+                <span class="pill">OTT</span>
+                <span class="pill">Jobs</span>
+                <span class="pill">Farmers</span>
+            </div>
+        </div>
+
+        <div class="subsection">
+            <h3>Custom Targets</h3>
+            <p>Within each category, you may enter a custom target name if the preset options do not apply. By doing so, you confirm that the target you name is an actual entity (person, organization, institution) and that your content is directed at them in good faith.</p>
+            <p>BoLja! does not verify the accuracy of custom target names and is not responsible for any content directed at incorrectly named or fictitious entities.</p>
+        </div>
+
+        <div class="subsection">
+            <h3>Naming &amp; Targeting Responsibility</h3>
+            <p>You must not name individuals as targets for the purpose of harassment, defamation, doxxing, or any other harmful purpose. Posts targeting specific private individuals (rather than organizations or public figures in their official capacity) may be removed without notice.</p>
+        </div>
+    </div>
+
+    <!-- SECTION 6 -->
+    <div class="section" id="sec6">
+        <div class="section-num">Section 06</div>
+        <h2>Prohibited Activities</h2>
+        <p>The following activities are strictly prohibited on BoLja!. Violation may result in immediate account suspension or permanent ban.</p>
+
+        <div class="subsection">
+            <h3>Prohibited Content</h3>
+            <ul class="prohibited-list">
+                <li>Hate speech, content targeting individuals or groups based on religion, caste, ethnicity, gender, sexual orientation, or disability</li>
+                <li>Defamatory, false, or misleading statements presented as fact about individuals or organizations</li>
+                <li>Content that incites or promotes violence against any person or group</li>
+                <li>Sexual or explicit content of any kind</li>
+                <li>Content involving minors in an inappropriate or exploitative manner</li>
+                <li>Spam — repetitive, low-effort, or automated posts designed to flood the platform</li>
+                <li>Impersonating any person, brand, government body, or BoLja! itself</li>
+                <li>Sharing private or confidential information of other individuals without consent</li>
+                <li>Content that violates applicable Indian laws, including the Information Technology Act, 2000</li>
+            </ul>
+        </div>
+
+        <div class="subsection">
+            <h3>Prohibited Platform Behaviour</h3>
+            <ul class="prohibited-list">
+                <li>Attempting to access other users' accounts, data, or FCM tokens without authorization</li>
+                <li>Reverse engineering, decompiling, or modifying the BoLja! application code for unauthorized use</li>
+                <li>Using automated scripts, bots, or scrapers to interact with the platform</li>
+                <li>Attempting to bypass Firestore security rules or Firebase Authentication</li>
+                <li>Coordinated inauthentic behaviour — organized campaigns of likes, comments, or reports designed to manipulate the platform</li>
+                <li>Artificially inflating or manipulating like counts or engagement metrics</li>
+                <li>Misusing the report system to target legitimate posts out of malice</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- SECTION 7 -->
+    <div class="section" id="sec7">
+        <div class="section-num">Section 07</div>
+        <h2>Data Collection &amp; Storage</h2>
+        <p>BoLja! collects and stores only the data necessary to operate the platform. We use <strong>Google Firebase (Firestore)</strong> for cloud storage and <strong>browser localStorage</strong> for local state persistence.</p>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Where Stored</th>
+                    <th>Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Name, Email</strong></td>
+                    <td>Firestore — <code>/users/{uid}</code></td>
+                    <td>Account identification and display</td>
+                </tr>
+                <tr>
+                    <td><strong>City / Location</strong></td>
+                    <td>Firestore — <code>/userProfiles/{uid}</code></td>
+                    <td>Optional — contextual display</td>
+                </tr>
+                <tr>
+                    <td><strong>Posts</strong></td>
+                    <td>Firestore — <code>/posts</code></td>
+                    <td>Public feed content</td>
+                </tr>
+                <tr>
+                    <td><strong>Comments &amp; Replies</strong></td>
+                    <td>Firestore — <code>/posts/{id}/comments</code></td>
+                    <td>Threaded discussion under each post</td>
+                </tr>
+                <tr>
+                    <td><strong>Likes</strong></td>
+                    <td>Firestore — <code>/posts/{id}/likes</code></td>
+                    <td>Engagement tracking per user</td>
+                </tr>
+                <tr>
+                    <td><strong>FCM Push Token</strong></td>
+                    <td>Firestore — <code>/userTokens/{uid}</code></td>
+                    <td>Delivering push notifications (if enabled)</td>
+                </tr>
+                <tr>
+                    <td><strong>In-App Notifications</strong></td>
+                    <td>Firestore — <code>/userNotifications/{uid}/items</code></td>
+                    <td>Like and comment alerts in notification badge</td>
+                </tr>
+                <tr>
+                    <td><strong>Session Snapshot</strong></td>
+                    <td>Browser localStorage (<code>boljaSavedState</code>)</td>
+                    <td>Fast app load without re-authentication</td>
+                </tr>
+                <tr>
+                    <td><strong>Offline Post Queue</strong></td>
+                    <td>Browser localStorage (<code>boljaOfflinePosts</code>)</td>
+                    <td>Storing unsent posts when device is offline</td>
+                </tr>
+                <tr>
+                    <td><strong>Notification Last Seen</strong></td>
+                    <td>Browser localStorage (<code>boljaNotifLastSeen</code>)</td>
+                    <td>Calculating unread notification badge count</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="subsection">
+            <h3>Third-Party Services</h3>
+            <ul class="rule-list">
+                <li><strong>Google Firebase</strong> (Auth, Firestore, Cloud Messaging) — data stored on Google's servers subject to Google's Privacy Policy</li>
+                <li><strong>Firebase Cloud Messaging (FCM)</strong> — used to deliver push notifications to your device</li>
+                <li><strong>Netlify</strong> — used for hosting the BoLja! application</li>
+            </ul>
+        </div>
+
+        <div class="subsection">
+            <h3>Data Retention</h3>
+            <p>Your data is retained as long as your account is active. Upon <strong>account deletion</strong>, your user document, profile, and FCM token are deleted. Posts and comments you have made may persist on the platform unless individually deleted by you prior to account deletion.</p>
+        </div>
+
+        <div class="subsection">
+            <h3>No Sale of Data</h3>
+            <p>BoLja! does <strong>not sell, rent, or trade</strong> your personal data to any third party. We do not serve advertisements. Your data is used solely to operate and improve the BoLja! platform.</p>
+        </div>
+    </div>
+
+    <!-- SECTION 8 -->
+    <div class="section" id="sec8">
+        <div class="section-num">Section 08</div>
+        <h2>Likes, Comments &amp; Interactions</h2>
+
+        <div class="subsection">
+            <h3>Likes</h3>
+            <p>You may like or unlike any post on BoLja!. Liking a post is a public action — your UID is recorded in Firestore against that post. When you like someone's post, the post owner receives a push notification (if enabled) and an in-app notification containing your display name.</p>
+        </div>
+
+        <div class="subsection">
+            <h3>Comments &amp; Replies</h3>
+            <p>Comments are stored under each post and are <strong>publicly visible</strong>. Your display name (as set in your profile) is attached to every comment you make. When you comment on a post, the post owner may be notified. BoLja! uses a YouTube-style threaded comment format where users can reply directly to comments.</p>
+        </div>
+
+        <div class="subsection">
+            <h3>Comment Conduct</h3>
+            <p>The same content standards that apply to posts apply to comments. Comments that are abusive, harassing, spam, or violate these Terms may be removed. Repeat violations may result in account action.</p>
+        </div>
+
+        <div class="subsection">
+            <h3>Deletion</h3>
+            <p>You may delete your own posts at any time via the "My Posts" section. Deleted posts are <strong>permanently removed</strong> from Firestore. Comments submitted under a deleted post will be removed along with the post. Individual comment deletion is subject to platform availability.</p>
+        </div>
+    </div>
+
+    <!-- SECTION 9 -->
+    <div class="section" id="sec9">
+        <div class="section-num">Section 09</div>
+        <h2>Push Notifications</h2>
+        <p>BoLja! uses <strong>Firebase Cloud Messaging (FCM)</strong> and a browser <strong>Service Worker</strong> to deliver push notifications for likes and comments.</p>
+
+        <div class="subsection">
+            <h3>Permission</h3>
+            <p>Push notifications require your explicit browser permission. You may grant or deny this permission at any time. If denied, you may re-enable notifications via your device or browser settings under <strong>Apps → BoLja! → Notifications</strong>.</p>
+        </div>
+
+        <div class="subsection">
+            <h3>FCM Token Storage</h3>
+            <p>When you enable notifications, your device's <strong>FCM push token</strong> is saved in Firestore under <code>/userTokens/{uid}</code>. This token is used solely to route push notifications to your specific device and is not shared with any third party.</p>
+        </div>
+
+        <div class="subsection">
+            <h3>Notification Content</h3>
+            <p>Notifications may contain the display name of the user who liked or commented on your post, along with the notification title and body. BoLja! does not send marketing, promotional, or unsolicited notifications.</p>
+        </div>
+
+        <div class="subsection">
+            <h3>Opting Out</h3>
+            <p>You may disable push notifications at any time. Disabling notifications does not delete your account or affect your ability to use any other BoLja! feature. In-app notification badges will continue to function independently of push notification permissions.</p>
+        </div>
+    </div>
+
+    <!-- SECTION 10 -->
+    <div class="section" id="sec10">
+        <div class="section-num">Section 10</div>
+        <h2>Reporting &amp; Moderation</h2>
+
+        <div class="subsection">
+            <h3>Reporting Posts</h3>
+            <p>Any user may report a post they believe violates these Terms. Reports are submitted for review and may result in the removal of the reported content and/or action against the posting user's account.</p>
+        </div>
+
+        <div class="subsection">
+            <h3>Moderation Actions</h3>
+            <p>BoLja! reserves the right to take the following actions without prior notice:</p>
+            <ul class="rule-list">
+                <li>Remove any content that violates these Terms</li>
+                <li>Issue a temporary suspension of a user account</li>
+                <li>Permanently ban a user account (identified by Firebase UID) for repeated or severe violations</li>
+                <li>Report content to relevant legal authorities if required by law</li>
+            </ul>
+        </div>
+
+        <div class="subsection">
+            <h3>Appeals</h3>
+            <p>If you believe your account has been suspended or your content removed in error, you may contact us via the email provided in the Contact section. We will review appeals on a case-by-case basis. BoLja!'s decision on appeals is final.</p>
+        </div>
+
+        <div class="subsection">
+            <h3>False Reports</h3>
+            <p>Misusing the report feature to target legitimate content or harrass other users is a violation of these Terms. Accounts found to be systematically filing false reports may themselves be subject to moderation action.</p>
+        </div>
+    </div>
+
+    <!-- SECTION 11 -->
+    <div class="section" id="sec11">
+        <div class="section-num">Section 11</div>
+        <h2>Offline Functionality</h2>
+        <p>BoLja! supports offline posting. When your device is not connected to the internet, posts you submit are saved temporarily in your browser's <strong>localStorage</strong> under the key <code>boljaOfflinePosts</code>.</p>
+        <ul class="rule-list">
+            <li>Offline posts are automatically uploaded to Firestore when your device reconnects to the internet</li>
+            <li>You may also manually trigger the upload via the <strong>"Upload Now"</strong> button in the pending posts banner</li>
+            <li>Offline posts are stored only on your local device until uploaded. They are not accessible to other users or to BoLja! servers until sync occurs</li>
+            <li>If you clear your browser data before syncing, unsent offline posts will be permanently lost</li>
+        </ul>
+        <div class="highlight-box"><strong>Note:</strong> The same content policies apply to offline posts. Posts queued offline that violate these Terms will be subject to the same moderation actions upon upload as any other post.</div>
+    </div>
+
+    <!-- SECTION 12 -->
+    <div class="section" id="sec12">
+        <div class="section-num">Section 12</div>
+        <h2>Account Termination &amp; Deletion</h2>
+
+        <div class="subsection">
+            <h3>Deleting Your Account</h3>
+            <p>You may permanently delete your BoLja! account at any time from <strong>Menu → Settings → Delete Account</strong>. To confirm deletion, you must type <strong>DELETE</strong> in the confirmation field. This action is irreversible.</p>
+            <p>Upon account deletion, the following data is permanently removed from Firestore:</p>
+            <ul class="rule-list">
+                <li>Your user document (<code>/users/{uid}</code>)</li>
+                <li>Your profile document (<code>/userProfiles/{uid}</code>)</li>
+                <li>Your FCM push token (<code>/userTokens/{uid}</code>)</li>
+                <li>Your notification records (<code>/userNotifications/{uid}</code>)</li>
+            </ul>
+        </div>
+
+        <div class="subsection">
+            <h3>Content After Deletion</h3>
+            <p>Posts and comments you have created may remain on the platform after account deletion unless you delete them individually before deleting your account. We recommend deleting all your posts via "My Posts" before initiating account deletion.</p>
+        </div>
+
+        <div class="subsection">
+            <h3>Termination by BoLja!</h3>
+            <p>We reserve the right to suspend or terminate your account at any time, with or without notice, if we determine that you have violated these Terms. Upon termination by BoLja!, you may not create a new account using the same or a different Google account without our express written permission.</p>
+        </div>
+    </div>
+
+    <!-- SECTION 13 -->
+    <div class="section" id="sec13">
+        <div class="section-num">Section 13</div>
+        <h2>Intellectual Property</h2>
+        <p>The <strong>BoLja!</strong> name, logo, design, UI/UX, codebase, and all original platform elements are the intellectual property of the BoLja! developer ("we"). All rights not expressly granted to users under these Terms are reserved.</p>
+        <ul class="rule-list">
+            <li>You may not copy, reproduce, redistribute, or create derivative works based on the BoLja! application without prior written permission</li>
+            <li>You retain full ownership of the original content you create and post on BoLja!</li>
+            <li>Third-party brand names, logos, and trademarks referenced in post targets (e.g. Jio, Netflix, YouTube) remain the property of their respective owners. BoLja! is not affiliated with or endorsed by any such third party</li>
+        </ul>
+    </div>
+
+    <!-- SECTION 14 -->
+    <div class="section" id="sec14">
+        <div class="section-num">Section 14</div>
+        <h2>Disclaimers &amp; Limitation of Liability</h2>
+
+        <div class="subsection">
+            <h3>Platform Provided "As-Is"</h3>
+            <p>BoLja! is provided on an <strong>"as-is" and "as-available" basis</strong> without warranties of any kind, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement.</p>
+        </div>
+
+        <div class="subsection">
+            <h3>User Content Disclaimer</h3>
+            <p>BoLja! is a user-generated content platform. We do not endorse, verify, or take responsibility for the accuracy, completeness, or legality of any content posted by users. Opinions expressed in posts and comments are solely those of the individual users and do not represent the views of BoLja!.</p>
+        </div>
+
+        <div class="subsection">
+            <h3>No Guarantee of Availability</h3>
+            <p>We do not guarantee uninterrupted or error-free access to the platform. BoLja! may be temporarily unavailable due to maintenance, Firebase/Firestore outages, Netlify downtime, or other technical factors beyond our control.</p>
+        </div>
+
+        <div class="subsection">
+            <h3>Limitation of Liability</h3>
+            <p>To the maximum extent permitted by applicable Indian law, BoLja! and its developer(s) shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of data, loss of revenue, loss of goodwill, or any other intangible losses arising from:</p>
+            <ul class="rule-list">
+                <li>Your use of or inability to use the platform</li>
+                <li>Content posted by other users</li>
+                <li>Unauthorized access to your account by a third party</li>
+                <li>Any technical failures in Firebase, Netlify, or FCM services</li>
+                <li>Loss of locally stored offline posts due to browser data being cleared</li>
+            </ul>
+        </div>
+
+        <div class="subsection">
+            <h3>Third-Party Targets</h3>
+            <p>BoLja! serves as a platform for users to raise concerns. We are not responsible for any actions taken, or not taken, by the entities targeted in user posts. BoLja! has no affiliation with any government body, brand, creator, or institution listed as a target option on the platform.</p>
+        </div>
+    </div>
+
+    <!-- SECTION 15 -->
+    <div class="section" id="sec15">
+        <div class="section-num">Section 15</div>
+        <h2>Governing Law</h2>
+        <p>These Terms shall be governed by and construed in accordance with the laws of <strong>India</strong>, including but not limited to:</p>
+        <ul class="rule-list">
+            <li>The Information Technology Act, 2000 and its amendments</li>
+            <li>The Information Technology (Intermediary Guidelines and Digital Media Ethics Code) Rules, 2021</li>
+            <li>The Digital Personal Data Protection Act, 2023</li>
+            <li>Any other applicable central or state laws of India</li>
+        </ul>
+        <p style="margin-top:14px;">Any disputes arising from these Terms or your use of BoLja! shall be subject to the exclusive jurisdiction of the courts of <strong>India</strong>. By using BoLja!, you consent to this jurisdiction.</p>
+    </div>
+
+    <!-- SECTION 16 -->
+    <div class="section" id="sec16">
+        <div class="section-num">Section 16</div>
+        <h2>Changes to These Terms</h2>
+        <p>BoLja! reserves the right to modify these Terms at any time. When changes are made:</p>
+        <ul class="rule-list">
+            <li>The <strong>"Last Updated"</strong> date at the top of this page will be revised</li>
+            <li>Material changes may be communicated via a push notification or in-app banner</li>
+            <li>Your continued use of BoLja! after the updated Terms are posted constitutes your acceptance of those changes</li>
+        </ul>
+        <p style="margin-top:14px;">We encourage you to review these Terms periodically. If you do not agree to the revised Terms, you must stop using BoLja! and may delete your account.</p>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="contact-card">
+        <h2>Questions? Contact Us</h2>
+        <p>For any queries, report requests, or account-related issues, reach us at:</p>
+        <a href="mailto:support@bolja.app" class="contact-email">support@bolja.app</a>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <br>
+        <a href="/" class="back-btn">← Back to BoLja!</a>
+        <br>
+        &copy; 2025 BoLja! — All rights reserved.<br>
+        Effective Date: July 1, 2025 &nbsp;|&nbsp; Governing Law: India<br>
+        <span style="color:#aaa">Powered by Firebase &amp; Netlify</span>
+    </div>
+
+</div>
+</body>
+</html>
