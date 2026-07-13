@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <title>Terms & Conditions — BoLja!</title>
+    <title>Terms &amp; Conditions — BoLja!</title>
     <meta name="theme-color" content="#0D47A1">
     <style>
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -396,7 +396,7 @@
 <nav class="top-bar">
     <div class="top-bar-inner">
         <a href="https://bolja-app.netlify.app" class="top-bar-logo">BoLja!</a>
-        <span class="top-bar-label">Terms & Conditions</span>
+        <span class="top-bar-label">Terms &amp; Conditions</span>
     </div>
 </nav>
 
@@ -406,7 +406,7 @@
     <p class="hero-sub">Please read these terms carefully before using BoLja!. By signing in, you agree to all terms below.</p>
     <div class="hero-meta">
         <span>Effective: July 1, 2025</span>
-        <span>Last updated: July 1, 2025</span>
+        <span>Last Updated: July 13, 2025</span>
         <span>Governing Law: India</span>
     </div>
 </header>
@@ -441,7 +441,7 @@
         <div class="section-num">Section 01</div>
         <h2>Acceptance of Terms</h2>
         <p>Welcome to <strong>BoLja!</strong> ("the App", "the Platform", "we", "us", or "our"). BoLja! is a public voice platform that enables users to raise questions, concerns, and feedback directed at government bodies, brands, creators, institutions, and other public entities.</p>
-        <p>By accessing or using BoLja! — whether through our web app, Progressive Web App (PWA), or any other interface — you ("User", "you") agree to be legally bound by these Terms &amp; Conditions ("Terms"). These Terms apply to all features including posting, commenting, liking, notifications, and account management.</p>
+        <p>By accessing or using BoLja! — whether through our app, web app, or any other interface — you ("User", "you") agree to be legally bound by these Terms &amp; Conditions ("Terms"). These Terms apply to all features including posting, commenting, liking, notifications, and account management.</p>
         <div class="highlight-box"><strong>Important:</strong> If you do not agree with any part of these Terms, you must not use BoLja!. Continued use of the platform after any updates constitutes acceptance of the revised Terms.</div>
     </div>
 
@@ -463,14 +463,14 @@
     <div class="section" id="sec3">
         <div class="section-num">Section 03</div>
         <h2>User Accounts &amp; Authentication</h2>
-        <p>BoLja! uses <strong>Google Sign-In (OAuth 2.0)</strong> exclusively for authentication, powered by <strong>Firebase Authentication</strong>. We do not store or manage passwords.</p>
+        <p>BoLja! uses <strong>Google Sign-In</strong> exclusively for authentication. We do not store or manage passwords.</p>
 
         <div class="subsection">
-            <h3>What we store from your Google account</h3>
+            <h3>What We Store from Your Google Account</h3>
             <ul class="rule-list">
                 <li>Your <strong>Google Display Name</strong> — pre-filled during profile setup</li>
-                <li>Your <strong>Google email address</strong> — stored in Firestore for account identification</li>
-                <li>Your unique <strong>Firebase UID</strong> — used to associate all your activity (posts, likes, comments)</li>
+                <li>Your <strong>Google email address</strong> — used for account identification</li>
+                <li>A <strong>unique Account ID</strong> — used to link your activity (posts, likes, comments) to your account</li>
             </ul>
         </div>
 
@@ -479,7 +479,7 @@
             <p>During initial profile setup, you may provide:</p>
             <ul class="rule-list">
                 <li><strong>Your Name</strong> — displayed publicly alongside your posts and comments</li>
-                <li><strong>Your City / Location</strong> — stored in Firestore and may be shown contextually</li>
+                <li><strong>Your City / Location</strong> — may be shown contextually on your profile and posts</li>
             </ul>
         </div>
 
@@ -493,7 +493,7 @@
             </ul>
         </div>
 
-        <div class="highlight-box"><strong>Session Persistence:</strong> BoLja! saves a lightweight session snapshot in your device's local storage to speed up app loading. This data is local only and is cleared upon logout or account deletion.</div>
+        <div class="highlight-box"><strong>Session Persistence:</strong> BoLja! saves a lightweight session snapshot on your device to speed up app loading. This data stays local and is cleared when you log out or delete your account.</div>
     </div>
 
     <!-- SECTION 4 -->
@@ -587,10 +587,10 @@
         <div class="subsection">
             <h3>Prohibited Platform Behaviour</h3>
             <ul class="prohibited-list">
-                <li>Attempting to access other users' accounts, data, or FCM tokens without authorization</li>
-                <li>Reverse engineering, decompiling, or modifying the BoLja! application code for unauthorized use</li>
+                <li>Attempting to access other users' accounts or data without authorization</li>
+                <li>Reverse engineering, decompiling, or modifying the BoLja! application for unauthorized use</li>
                 <li>Using automated scripts, bots, or scrapers to interact with the platform</li>
-                <li>Attempting to bypass Firestore security rules or Firebase Authentication</li>
+                <li>Attempting to bypass platform security or authentication systems</li>
                 <li>Coordinated inauthentic behaviour — organized campaigns of likes, comments, or reports designed to manipulate the platform</li>
                 <li>Artificially inflating or manipulating like counts or engagement metrics</li>
                 <li>Misusing the report system to target legitimate posts out of malice</li>
@@ -602,7 +602,7 @@
     <div class="section" id="sec7">
         <div class="section-num">Section 07</div>
         <h2>Data Collection &amp; Storage</h2>
-        <p>BoLja! collects and stores only the data necessary to operate the platform. We use <strong>Google Firebase (Firestore)</strong> for cloud storage and <strong>browser localStorage</strong> for local state persistence.</p>
+        <p>BoLja! collects and stores only the data necessary to operate the platform. Server data is stored securely in the cloud, while certain data is also stored locally on your device for a faster, offline-friendly experience.</p>
 
         <table class="data-table">
             <thead>
@@ -614,54 +614,54 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><strong>Name, Email</strong></td>
-                    <td>Firestore — <code>/users/{uid}</code></td>
+                    <td><strong>Name &amp; Email</strong></td>
+                    <td>Secure cloud database</td>
                     <td>Account identification and display</td>
                 </tr>
                 <tr>
                     <td><strong>City / Location</strong></td>
-                    <td>Firestore — <code>/userProfiles/{uid}</code></td>
-                    <td>Optional — contextual display</td>
+                    <td>Secure cloud database</td>
+                    <td>Optional — contextual display on posts</td>
                 </tr>
                 <tr>
                     <td><strong>Posts</strong></td>
-                    <td>Firestore — <code>/posts</code></td>
+                    <td>Secure cloud database</td>
                     <td>Public feed content</td>
                 </tr>
                 <tr>
                     <td><strong>Comments &amp; Replies</strong></td>
-                    <td>Firestore — <code>/posts/{id}/comments</code></td>
+                    <td>Secure cloud database</td>
                     <td>Threaded discussion under each post</td>
                 </tr>
                 <tr>
                     <td><strong>Likes</strong></td>
-                    <td>Firestore — <code>/posts/{id}/likes</code></td>
+                    <td>Secure cloud database</td>
                     <td>Engagement tracking per user</td>
                 </tr>
                 <tr>
-                    <td><strong>FCM Push Token</strong></td>
-                    <td>Firestore — <code>/userTokens/{uid}</code></td>
-                    <td>Delivering push notifications (if enabled)</td>
+                    <td><strong>Push Notification Token</strong></td>
+                    <td>Secure cloud database</td>
+                    <td>Delivering push notifications to your device (if enabled)</td>
                 </tr>
                 <tr>
                     <td><strong>In-App Notifications</strong></td>
-                    <td>Firestore — <code>/userNotifications/{uid}/items</code></td>
+                    <td>Secure cloud database</td>
                     <td>Like and comment alerts in notification badge</td>
                 </tr>
                 <tr>
                     <td><strong>Session Snapshot</strong></td>
-                    <td>Browser localStorage (<code>boljaSavedState</code>)</td>
-                    <td>Fast app load without re-authentication</td>
+                    <td>Your device (local storage)</td>
+                    <td>Fast app load without re-authentication each time</td>
                 </tr>
                 <tr>
                     <td><strong>Offline Post Queue</strong></td>
-                    <td>Browser localStorage (<code>boljaOfflinePosts</code>)</td>
+                    <td>Your device (local storage)</td>
                     <td>Storing unsent posts when device is offline</td>
                 </tr>
                 <tr>
-                    <td><strong>Notification Last Seen</strong></td>
-                    <td>Browser localStorage (<code>boljaNotifLastSeen</code>)</td>
-                    <td>Calculating unread notification badge count</td>
+                    <td><strong>Cached Feed Posts</strong></td>
+                    <td>Your device (local storage)</td>
+                    <td>Showing previously loaded posts when offline</td>
                 </tr>
             </tbody>
         </table>
@@ -669,20 +669,31 @@
         <div class="subsection">
             <h3>Third-Party Services</h3>
             <ul class="rule-list">
-                <li><strong>Google Firebase</strong> (Auth, Firestore, Cloud Messaging) — data stored on Google's servers subject to Google's Privacy Policy</li>
-                <li><strong>Firebase Cloud Messaging (FCM)</strong> — used to deliver push notifications to your device</li>
-                <li><strong>Netlify</strong> — used for hosting the BoLja! application</li>
+                <li><strong>Google Firebase</strong> (Authentication, Database, Cloud Messaging) — data stored on Google's servers, subject to Google's Privacy Policy</li>
+                <li><strong>Netlify</strong> — used for hosting the BoLja! web application</li>
             </ul>
         </div>
 
         <div class="subsection">
             <h3>Data Retention</h3>
-            <p>Your data is retained as long as your account is active. Upon <strong>account deletion</strong>, your user document, profile, and FCM token are deleted. Posts and comments you have made may persist on the platform unless individually deleted by you prior to account deletion.</p>
+            <p>Your data is retained as long as your account is active. Upon <strong>account deletion</strong>, your user profile, account information, and notification token are permanently deleted from our servers. Posts and comments you have made may remain on the platform unless you delete them individually before deleting your account.</p>
+        </div>
+
+        <div class="subsection">
+            <h3>Advertisements</h3>
+            <p>BoLja! may display <strong>third-party advertisements</strong> within the app. If advertisements are shown:</p>
+            <ul class="rule-list">
+                <li>Ads are served by trusted ad networks (such as Google AdMob or similar) that comply with applicable privacy laws</li>
+                <li>Ad networks may use limited, non-personally identifiable information (such as device type and general location) to serve relevant ads</li>
+                <li>We do <strong>not</strong> share your name, email address, posts, or any directly personal data with ad networks</li>
+                <li>Clicking an ad may take you to a third-party website — BoLja! is not responsible for the content or privacy practices of those sites</li>
+            </ul>
+            <div class="highlight-box"><strong>Note:</strong> Any future introduction of advertisements will be reflected in an updated version of this policy and communicated through the app.</div>
         </div>
 
         <div class="subsection">
             <h3>No Sale of Data</h3>
-            <p>BoLja! does <strong>not sell, rent, or trade</strong> your personal data to any third party. We do not serve advertisements. Your data is used solely to operate and improve the BoLja! platform.</p>
+            <p>BoLja! does <strong>not sell, rent, or trade</strong> your personal data to any third party for commercial purposes. Your data is used solely to operate and improve the BoLja! platform.</p>
         </div>
     </div>
 
@@ -693,12 +704,12 @@
 
         <div class="subsection">
             <h3>Likes</h3>
-            <p>You may like or unlike any post on BoLja!. Liking a post is a public action — your UID is recorded in Firestore against that post. When you like someone's post, the post owner receives a push notification (if enabled) and an in-app notification containing your display name.</p>
+            <p>You may like or unlike any post on BoLja!. Liking a post is a public action — your like is recorded against that post. When you like someone's post, the post owner receives a notification (if enabled) containing your display name.</p>
         </div>
 
         <div class="subsection">
             <h3>Comments &amp; Replies</h3>
-            <p>Comments are stored under each post and are <strong>publicly visible</strong>. Your display name (as set in your profile) is attached to every comment you make. When you comment on a post, the post owner may be notified. BoLja! uses a YouTube-style threaded comment format where users can reply directly to comments.</p>
+            <p>Comments are stored under each post and are <strong>publicly visible</strong>. Your display name (as set in your profile) is attached to every comment you make. When you comment on a post, the post owner may be notified. BoLja! supports threaded replies where users can reply directly to comments.</p>
         </div>
 
         <div class="subsection">
@@ -708,7 +719,7 @@
 
         <div class="subsection">
             <h3>Deletion</h3>
-            <p>You may delete your own posts at any time via the "My Posts" section. Deleted posts are <strong>permanently removed</strong> from Firestore. Comments submitted under a deleted post will be removed along with the post. Individual comment deletion is subject to platform availability.</p>
+            <p>You may delete your own posts at any time via the "My Posts" section. Deleted posts are <strong>permanently removed</strong> from our servers. Comments submitted under a deleted post will be removed along with the post.</p>
         </div>
     </div>
 
@@ -716,16 +727,16 @@
     <div class="section" id="sec9">
         <div class="section-num">Section 09</div>
         <h2>Push Notifications</h2>
-        <p>BoLja! uses <strong>Firebase Cloud Messaging (FCM)</strong> and a browser <strong>Service Worker</strong> to deliver push notifications for likes and comments.</p>
+        <p>BoLja! uses <strong>Firebase Cloud Messaging (FCM)</strong> to deliver push notifications for likes and comments.</p>
 
         <div class="subsection">
             <h3>Permission</h3>
-            <p>Push notifications require your explicit browser permission. You may grant or deny this permission at any time. If denied, you may re-enable notifications via your device or browser settings under <strong>Apps → BoLja! → Notifications</strong>.</p>
+            <p>Push notifications require your explicit permission. You may grant or deny this permission at any time. If denied, you may re-enable notifications via your device settings under <strong>Apps → BoLja! → Notifications</strong>.</p>
         </div>
 
         <div class="subsection">
-            <h3>FCM Token Storage</h3>
-            <p>When you enable notifications, your device's <strong>FCM push token</strong> is saved in Firestore under <code>/userTokens/{uid}</code>. This token is used solely to route push notifications to your specific device and is not shared with any third party.</p>
+            <h3>Notification Token</h3>
+            <p>When you enable notifications, a device-specific push token is stored securely on our servers. This token is used solely to route notifications to your device and is not shared with any third party.</p>
         </div>
 
         <div class="subsection">
@@ -755,19 +766,19 @@
             <ul class="rule-list">
                 <li>Remove any content that violates these Terms</li>
                 <li>Issue a temporary suspension of a user account</li>
-                <li>Permanently ban a user account (identified by Firebase UID) for repeated or severe violations</li>
+                <li>Permanently ban a user account for repeated or severe violations</li>
                 <li>Report content to relevant legal authorities if required by law</li>
             </ul>
         </div>
 
         <div class="subsection">
             <h3>Appeals</h3>
-            <p>If you believe your account has been suspended or your content removed in error, you may contact us via the email provided in the Contact section. We will review appeals on a case-by-case basis. BoLja!'s decision on appeals is final.</p>
+            <p>If you believe your account has been suspended or your content removed in error, you may contact us at the email provided below. We will review appeals on a case-by-case basis. BoLja!'s decision on appeals is final.</p>
         </div>
 
         <div class="subsection">
             <h3>False Reports</h3>
-            <p>Misusing the report feature to target legitimate content or harrass other users is a violation of these Terms. Accounts found to be systematically filing false reports may themselves be subject to moderation action.</p>
+            <p>Misusing the report feature to target legitimate content or harass other users is a violation of these Terms. Accounts found to be systematically filing false reports may themselves be subject to moderation action.</p>
         </div>
     </div>
 
@@ -775,12 +786,13 @@
     <div class="section" id="sec11">
         <div class="section-num">Section 11</div>
         <h2>Offline Functionality</h2>
-        <p>BoLja! supports offline posting. When your device is not connected to the internet, posts you submit are saved temporarily in your browser's <strong>localStorage</strong> under the key <code>boljaOfflinePosts</code>.</p>
+        <p>BoLja! supports offline posting. When your device is not connected to the internet, posts you submit are temporarily saved on your device.</p>
         <ul class="rule-list">
-            <li>Offline posts are automatically uploaded to Firestore when your device reconnects to the internet</li>
+            <li>Offline posts are automatically uploaded when your device reconnects to the internet</li>
             <li>You may also manually trigger the upload via the <strong>"Upload Now"</strong> button in the pending posts banner</li>
-            <li>Offline posts are stored only on your local device until uploaded. They are not accessible to other users or to BoLja! servers until sync occurs</li>
-            <li>If you clear your browser data before syncing, unsent offline posts will be permanently lost</li>
+            <li>Offline posts are stored only on your local device until uploaded — they are not accessible to other users or BoLja! servers until sync occurs</li>
+            <li>If you clear your device's app data before syncing, any unsent offline posts will be permanently lost</li>
+            <li>Previously loaded posts are also cached locally so your feed is not empty when offline</li>
         </ul>
         <div class="highlight-box"><strong>Note:</strong> The same content policies apply to offline posts. Posts queued offline that violate these Terms will be subject to the same moderation actions upon upload as any other post.</div>
     </div>
@@ -793,12 +805,12 @@
         <div class="subsection">
             <h3>Deleting Your Account</h3>
             <p>You may permanently delete your BoLja! account at any time from <strong>Menu → Settings → Delete Account</strong>. To confirm deletion, you must type <strong>DELETE</strong> in the confirmation field. This action is irreversible.</p>
-            <p>Upon account deletion, the following data is permanently removed from Firestore:</p>
+            <p>Upon account deletion, the following data is permanently removed from our servers:</p>
             <ul class="rule-list">
-                <li>Your user document (<code>/users/{uid}</code>)</li>
-                <li>Your profile document (<code>/userProfiles/{uid}</code>)</li>
-                <li>Your FCM push token (<code>/userTokens/{uid}</code>)</li>
-                <li>Your notification records (<code>/userNotifications/{uid}</code>)</li>
+                <li>Your account and profile information</li>
+                <li>Your push notification token</li>
+                <li>Your notification history</li>
+                <li>All locally cached data on your device</li>
             </ul>
         </div>
 
@@ -842,7 +854,7 @@
 
         <div class="subsection">
             <h3>No Guarantee of Availability</h3>
-            <p>We do not guarantee uninterrupted or error-free access to the platform. BoLja! may be temporarily unavailable due to maintenance, Firebase/Firestore outages, Netlify downtime, or other technical factors beyond our control.</p>
+            <p>We do not guarantee uninterrupted or error-free access to the platform. BoLja! may be temporarily unavailable due to maintenance, third-party service outages, or other technical factors beyond our control.</p>
         </div>
 
         <div class="subsection">
@@ -852,8 +864,8 @@
                 <li>Your use of or inability to use the platform</li>
                 <li>Content posted by other users</li>
                 <li>Unauthorized access to your account by a third party</li>
-                <li>Any technical failures in Firebase, Netlify, or FCM services</li>
-                <li>Loss of locally stored offline posts due to browser data being cleared</li>
+                <li>Any technical failures of third-party services used by BoLja!</li>
+                <li>Loss of locally stored offline posts due to device data being cleared</li>
             </ul>
         </div>
 
@@ -903,11 +915,12 @@
         <button onclick="goBack()" class="back-btn">← Back to BoLja!</button>
         <br>
         &copy; 2025 BoLja! — All rights reserved.<br>
-        Effective Date: July 1, 2025 &nbsp;|&nbsp; Governing Law: India<br>
-        <span style="color:#aaa">Powered by Firebase &amp; Netlify</span>
+        Effective: July 1, 2025 &nbsp;|&nbsp; Last Updated: July 13, 2025 &nbsp;|&nbsp; Governing Law: India<br>
+        <a href="./privacy_policy.html">Privacy Policy</a> &nbsp;|&nbsp; Terms &amp; Conditions
     </div>
 
 </div>
+
 <script>
     function goBack() {
         if (window.history.length > 1) {
