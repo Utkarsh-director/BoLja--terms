@@ -378,7 +378,7 @@
     <p class="hero-sub">This policy explains how we collect, use, store, and protect your personal information when you use BoLja!.</p>
     <div class="hero-meta">
         <span>Effective: June 2025</span>
-        <span>Last Updated: June 2025</span>
+        <span>Last Updated: July 2025</span>
         <span>Governing Law: India</span>
     </div>
 </header>
@@ -393,15 +393,16 @@
             <li><a href="#sec2">Information We Collect</a></li>
             <li><a href="#sec3">How We Use Your Information</a></li>
             <li><a href="#sec4">Push Notifications</a></li>
-            <li><a href="#sec5">Data Storage &amp; Security</a></li>
-            <li><a href="#sec6">Google Sign-In</a></li>
-            <li><a href="#sec7">User-Generated Content</a></li>
-            <li><a href="#sec8">Data Retention</a></li>
-            <li><a href="#sec9">Children's Privacy</a></li>
-            <li><a href="#sec10">Third-Party Services</a></li>
-            <li><a href="#sec11">Your Rights</a></li>
-            <li><a href="#sec12">Changes to This Policy</a></li>
-            <li><a href="#sec13">Contact Us</a></li>
+            <li><a href="#sec5">Cache &amp; Offline Storage</a></li>
+            <li><a href="#sec6">Data Storage &amp; Security</a></li>
+            <li><a href="#sec7">Google Sign-In</a></li>
+            <li><a href="#sec8">User-Generated Content</a></li>
+            <li><a href="#sec9">Data Retention</a></li>
+            <li><a href="#sec10">Children's Privacy</a></li>
+            <li><a href="#sec11">Third-Party Services</a></li>
+            <li><a href="#sec12">Your Rights</a></li>
+            <li><a href="#sec13">Changes to This Policy</a></li>
+            <li><a href="#sec14">Contact Us</a></li>
         </ul>
     </div>
 
@@ -409,7 +410,7 @@
     <div class="section" id="sec1">
         <div class="section-num">Section 01</div>
         <h2>Introduction</h2>
-        <p><strong>BoLja!</strong> ("we", "our", or "the app") is a social Q&A platform that allows users to post questions, share concerns, and engage with their community.</p>
+        <p><strong>BoLja!</strong> ("we", "our", or "the app") is a social Q&amp;A platform that allows users to post questions, share concerns, and engage with their community.</p>
         <p>This Privacy Policy explains how we collect, use, store, and protect your personal information when you use our app.</p>
         <div class="highlight-box"><strong>By using BoLja!, you agree to the terms of this Privacy Policy.</strong></div>
     </div>
@@ -446,6 +447,7 @@
                 <li>We do not collect your <strong>location in real-time (GPS)</strong></li>
                 <li>We do not collect your <strong>contacts or call logs</strong></li>
                 <li>We do not collect <strong>payment information</strong></li>
+                <li>We do not collect <strong>device hardware identifiers</strong> (IMEI, MAC address, etc.)</li>
             </ul>
         </div>
     </div>
@@ -482,6 +484,10 @@
                     <td><strong>Push Notification Token</strong></td>
                     <td>Send push notifications (likes, comments, replies)</td>
                 </tr>
+                <tr>
+                    <td><strong>Cached Posts (local device)</strong></td>
+                    <td>Display previously loaded content when you are offline</td>
+                </tr>
             </tbody>
         </table>
     </div>
@@ -504,54 +510,126 @@
         </div>
     </div>
 
-    <!-- SECTION 5 -->
+    <!-- SECTION 5 — NEW: Cache & Offline Storage -->
     <div class="section" id="sec5">
         <div class="section-num">Section 05</div>
+        <h2>Cache &amp; Offline Storage</h2>
+        <p>To provide a smooth experience — even when your internet connection is slow or unavailable — BoLja! saves certain data directly on your device using your browser's or app's local storage. This means the feed will not be blank when you open the app offline.</p>
+
+        <div class="subsection">
+            <h3>What We Store on Your Device</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Data Stored Locally</th>
+                        <th>Purpose</th>
+                        <th>Shared with Server?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Cached Posts Feed</strong></td>
+                        <td>Show previously loaded posts when offline</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Your Posts Cache</strong></td>
+                        <td>Show your own posts instantly without re-loading</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Session State</strong> (name, account ID, profile photo URL)</td>
+                        <td>Keep you logged in between app opens without requiring re-authentication</td>
+                        <td>No — stored locally only</td>
+                    </tr>
+                    <tr>
+                        <td><strong>T&amp;C / Privacy Policy Acceptance Flag</strong></td>
+                        <td>Remember that you have already agreed so we do not prompt you again</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Comment Seen Count</strong></td>
+                        <td>Show unread comment badge on posts you have not yet opened</td>
+                        <td>No</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="subsection">
+            <h3>Important Points</h3>
+            <ul class="rule-list">
+                <li>All locally cached data stays <strong>on your device only</strong> — it is never uploaded to our servers separately</li>
+                <li>Cached data contains only <strong>publicly available post content</strong> and minimal session info needed to keep you logged in</li>
+                <li><strong>No passwords, payment details, or sensitive personal data</strong> are ever stored in local cache</li>
+                <li>Cache is automatically refreshed with fresh data every time you reconnect to the internet</li>
+                <li>When you <strong>log out or delete your account</strong>, all locally cached data is cleared from your device immediately</li>
+            </ul>
+        </div>
+
+        <div class="subsection">
+            <h3>How to Clear Cache Manually</h3>
+            <ul class="rule-list">
+                <li>App Settings → Clear Cache</li>
+                <li>Phone Settings → Apps → BoLja! → Storage → Clear Cache</li>
+            </ul>
+        </div>
+
+        <div class="highlight-box"><strong>Why we do this:</strong> So your feed loads instantly and the screen is never empty — even with a slow or no internet connection. No extra data is collected; this is purely for your offline experience.</div>
+    </div>
+
+    <!-- SECTION 6 (was 5) -->
+    <div class="section" id="sec6">
+        <div class="section-num">Section 06</div>
         <h2>Data Storage &amp; Security</h2>
         <ul class="rule-list">
-            <li>All data is stored on <strong>secure cloud servers</strong> with industry-standard encryption</li>
+            <li>All server data is stored on <strong>secure cloud servers</strong> with industry-standard encryption</li>
             <li>We use <strong>strict access controls</strong> to ensure users can only access their own private data</li>
+            <li>Data in transit between your device and our servers is protected using <strong>HTTPS encryption</strong></li>
             <li>Data may be stored on servers located outside your country, subject to Google's data handling standards</li>
         </ul>
         <div class="warn-box"><strong>We do not sell, rent, or share your personal data with any third party for commercial purposes.</strong></div>
     </div>
 
-    <!-- SECTION 6 -->
-    <div class="section" id="sec6">
-        <div class="section-num">Section 06</div>
+    <!-- SECTION 7 (was 6) -->
+    <div class="section" id="sec7">
+        <div class="section-num">Section 07</div>
         <h2>Google Sign-In</h2>
         <ul class="rule-list">
             <li>BoLja! uses <strong>Google OAuth</strong> for authentication — no passwords are stored by us</li>
             <li>When you sign in with Google, we receive your: <strong>name, email address, and Google profile photo URL</strong></li>
+            <li>We do <strong>not</strong> access your Google contacts, Google Drive, Gmail, or any other Google service beyond basic profile information</li>
         </ul>
         <div class="highlight-box"><strong>Google's own Privacy Policy</strong> applies to your Google account data: <a href="https://policies.google.com/privacy" target="_blank" style="color:var(--blue-light);">policies.google.com/privacy</a></div>
     </div>
 
-    <!-- SECTION 7 -->
-    <div class="section" id="sec7">
-        <div class="section-num">Section 07</div>
+    <!-- SECTION 8 (was 7) -->
+    <div class="section" id="sec8">
+        <div class="section-num">Section 08</div>
         <h2>User-Generated Content</h2>
         <ul class="rule-list">
             <li>Everything you post (questions, comments, replies) is <strong>publicly visible</strong> to all users of the app</li>
             <li>Do <strong>not</strong> share personal information (phone numbers, addresses, financial information) in your posts</li>
             <li>We reserve the right to <strong>remove any content</strong> that violates our Terms &amp; Conditions</li>
         </ul>
+        <div class="warn-box"><strong>Reminder:</strong> Public posts are also locally cached on other users' devices for offline viewing. Avoid sharing any information in posts that you would not want temporarily stored on another person's device.</div>
     </div>
 
-    <!-- SECTION 8 -->
-    <div class="section" id="sec8">
-        <div class="section-num">Section 08</div>
+    <!-- SECTION 9 (was 8) -->
+    <div class="section" id="sec9">
+        <div class="section-num">Section 09</div>
         <h2>Data Retention</h2>
         <ul class="rule-list">
             <li>Your account data is retained as long as your <strong>account is active</strong></li>
             <li>If you <strong>delete your account</strong>, your profile and posts will be permanently removed from our servers</li>
             <li>Notification tokens are deleted when you <strong>log out or delete your account</strong></li>
+            <li>All <strong>locally cached data</strong> on your device is cleared when you log out or delete your account</li>
         </ul>
     </div>
 
-    <!-- SECTION 9 -->
-    <div class="section" id="sec9">
-        <div class="section-num">Section 09</div>
+    <!-- SECTION 10 (was 9) -->
+    <div class="section" id="sec10">
+        <div class="section-num">Section 10</div>
         <h2>Children's Privacy</h2>
         <ul class="rule-list">
             <li>BoLja! is <strong>not intended for users under the age of 13 years</strong></li>
@@ -561,9 +639,9 @@
         <div class="warn-box"><strong>Parents/Guardians:</strong> If you believe your child has created a BoLja! account without consent, please contact us at <a href="mailto:boljasupport@gmail.com?subject=Child%20Account%20Report" style="color:#C62828;">boljasupport@gmail.com</a> immediately.</div>
     </div>
 
-    <!-- SECTION 10 -->
-    <div class="section" id="sec10">
-        <div class="section-num">Section 10</div>
+    <!-- SECTION 11 (was 10) -->
+    <div class="section" id="sec11">
+        <div class="section-num">Section 11</div>
         <h2>Third-Party Services Used</h2>
         <table class="data-table">
             <thead>
@@ -591,11 +669,12 @@
                 </tr>
             </tbody>
         </table>
+        <div class="highlight-box"><strong>Note:</strong> No advertising networks, analytics SDKs, or data brokers are used. We do not share your data with any third party beyond the services listed above.</div>
     </div>
 
-    <!-- SECTION 11 -->
-    <div class="section" id="sec11">
-        <div class="section-num">Section 11</div>
+    <!-- SECTION 12 (was 11) -->
+    <div class="section" id="sec12">
+        <div class="section-num">Section 12</div>
         <h2>Your Rights</h2>
         <p>You have the right to:</p>
         <ul class="rule-list">
@@ -604,13 +683,14 @@
             <li><strong>Delete</strong> your account and all associated data</li>
             <li><strong>Withdraw consent</strong> for notifications at any time</li>
             <li><strong>Request a copy</strong> of your data</li>
+            <li><strong>Clear your local cache</strong> at any time via App Settings or your device's app storage settings</li>
         </ul>
         <div class="highlight-box"><strong>To exercise these rights, contact us at:</strong> <a href="mailto:boljasupport@gmail.com?subject=Data%20Rights%20Request" style="color:var(--blue-light);">boljasupport@gmail.com</a></div>
     </div>
 
-    <!-- SECTION 12 -->
-    <div class="section" id="sec12">
-        <div class="section-num">Section 12</div>
+    <!-- SECTION 13 (was 12) -->
+    <div class="section" id="sec13">
+        <div class="section-num">Section 13</div>
         <h2>Changes to This Privacy Policy</h2>
         <p>We may update this Privacy Policy from time to time. When we do:</p>
         <ul class="rule-list">
@@ -620,9 +700,9 @@
         </ul>
     </div>
 
-    <!-- SECTION 13 -->
-    <div class="section" id="sec13">
-        <div class="section-num">Section 13</div>
+    <!-- SECTION 14 (was 13) -->
+    <div class="section" id="sec14">
+        <div class="section-num">Section 14</div>
         <h2>Contact Us</h2>
         <p>For any privacy-related questions, concerns, or requests:</p>
         <ul class="rule-list">
@@ -644,7 +724,7 @@
         <button onclick="goBack()" class="back-btn">← Back to BoLja!</button>
         <br>
         &copy; 2025 BoLja! — All rights reserved.<br>
-        Effective: June 2025 &nbsp;|&nbsp; Governing Law: India<br>
+        Effective: June 2025 &nbsp;|&nbsp; Last Updated: July 2025 &nbsp;|&nbsp; Governing Law: India<br>
         <a href="./T_C_.html">Terms &amp; Conditions</a> &nbsp;|&nbsp; Privacy Policy
     </div>
 
